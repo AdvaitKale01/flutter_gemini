@@ -3,8 +3,8 @@ import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
-import 'package:flutter_gemini/src/models/candidates/candidates.dart';
 import 'package:mime/mime.dart';
+
 import '../config/constants.dart';
 import '../repository/gemini_interface.dart';
 import 'gemini_service.dart';
@@ -231,7 +231,7 @@ class GeminiImpl implements GeminiInterface {
     Gemini.instance.typeProvider?.clear();
 
     final response = await api.post(
-      '${modelName ?? ((images?.isNotEmpty ?? false) ? 'models/gemini-pro-vision' : Constants.defaultModel)}:streamGenerateContent',
+      '${modelName ?? ((images?.isNotEmpty ?? false) ? 'models/gemini-1.5-flash' : Constants.defaultModel)}:streamGenerateContent',
       isStreamResponse: true,
       data: {
         'contents': [
@@ -345,7 +345,7 @@ class GeminiImpl implements GeminiInterface {
       GenerationConfig? generationConfig}) async {
     Gemini.instance.typeProvider?.clear();
     final response = await api.post(
-      "${modelName ?? 'models/gemini-pro-vision'}:${Constants.defaultGenerateType}",
+      "${modelName ?? 'models/gemini-1.5-flash'}:${Constants.defaultGenerateType}",
       data: {
         'contents': [
           {

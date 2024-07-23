@@ -3,6 +3,7 @@ import '../models/gemini_model/gemini_model.dart';
 class Constants {
   Constants._();
   static const String defaultModel = 'models/gemini-1.0-pro';
+  static const String defaultVisionModel = 'models/gemini-1.5-flash';
   static const String defaultVersion = 'v1beta';
   static const String defaultGenerateType = 'generateContent';
   static const String baseUrl = 'https://generativelanguage.googleapis.com/';
@@ -112,6 +113,20 @@ class Constants {
               "Model trained to return answers to questions that are grounded in provided sources, along with estimating answerable probability.",
           "inputTokenLimit": 7168,
           "outputTokenLimit": 1024,
+          "supportedGenerationMethods": ["generateAnswer"],
+          "temperature": 0.2,
+          "topP": 1,
+          "topK": 40
+        },
+        {
+          "name": "models/gemini-1.5-flash",
+          "version": "1.5",
+          "displayName":
+              "Model that has fast and versatile performance across a diverse variety of tasks",
+          "description":
+              "Gemini 1.5 Flash is a fast and versatile multimodal model for scaling across diverse tasks.",
+          "inputTokenLimit": 1048576,
+          "outputTokenLimit": 8192,
           "supportedGenerationMethods": ["generateAnswer"],
           "temperature": 0.2,
           "topP": 1,

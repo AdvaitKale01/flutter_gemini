@@ -103,5 +103,19 @@
     "temperature": 0.2,
     "topP": 1,
     "topK": 40
+  },
+  {
+    "name": "models/gemini-1.5-flash",
+    "version": "1.5",
+    "displayName":
+    "Model that has fast and versatile performance across a diverse variety of tasks",
+    "description":
+    "Gemini 1.5 Flash is a fast and versatile multimodal model for scaling across diverse tasks.",
+    "inputTokenLimit": 1048576,
+    "outputTokenLimit": 8192,
+    "supportedGenerationMethods": ["generateAnswer"],
+    "temperature": 0.2,
+    "topP": 1,
+    "topK": 40
   }
 ]
